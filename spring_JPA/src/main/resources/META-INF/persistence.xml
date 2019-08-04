@@ -1,0 +1,38 @@
+<persistence version="2.0"
+             xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+    <!--持久化单元-->
+    <persistence-unit name="NewPersistenceUnit">
+
+        <class>com.duan.jpa.pojo.Article</class>
+        <class>com.duan.jpa.pojo.Address</class>
+        <class>com.duan.jpa.pojo.People</class>
+        <class>com.duan.jpa.pojo.Authority</class>
+        <class>com.duan.jpa.pojo.User</class>
+        <class>com.duan.jpa.pojo.Teacher</class>
+        <class>com.duan.jpa.pojo.Student</class>
+        <class>com.duan.jpa.pojo.Library</class>
+
+
+    <properties>
+        <property name="javax.persistence.jdbc.url"
+                  value="jdbc:mysql://127.0.0.1:3306/movebooking?serverTimezone=UTC&amp;characterEncoding=UTF-8" />
+        <property name="javax.persistence.jdbc.user" value="root" />
+        <property name="javax.persistence.jdbc.password"
+                  value="1234" />
+        <property name="javax.persistence.jdbc.driver"
+                  value="com.mysql.cj.jdbc.Driver" />
+        <property name="eclipselink.logging.level" value="FINE" />
+        <property name="eclipselink.ddl-generation"
+                  value="create-tables" />
+
+        <!-- 配置JPA实现产品的属性，即hibernate的属性 -->
+        <property name="hibernate.format_sql" value="true" /><!-- 是否格式化sql语句 -->
+        <property name="hibernate.show_sql" value="true" /> <!-- 是否在控制台打印sql语句 -->
+        <property name="hibernate.hbm2ddl.auto" value="update" />
+    </properties>
+
+    </persistence-unit>
+</persistence>
