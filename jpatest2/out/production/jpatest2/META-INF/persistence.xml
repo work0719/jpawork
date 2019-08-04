@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="jpa">
+        <!-- 添加对应的持久化类 -->
+        <class>main.Article</class>
+        <class>main.Address</class>
+
+        <class>main.People</class>
+        <class>main.Authority</class>
+        <class>main.User</class>
+        <class>main.Author</class>
+
+        <properties>
+            <!-- jpa中连接数据库 -->
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost:3306/taiji0726?serverTimezone=GMT%2B8&amp;useSSL=false"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password"
+                      value="root"/>
+            <property name="javax.persistence.jdbc.driver"
+                      value="com.mysql.cj.jdbc.Driver"/>
+            <property name="eclipselink.logging.level" value="FINE"/>
+            <property name="eclipselink.ddl-generation"
+                      value="create-tables"/>
+
+            <!-- 配置JPA实现产品的属性，即hibernate的属性 -->
+            <property name="hibernate.format_sql" value="true"/><!-- 是否格式化sql语句 -->
+            <property name="hibernate.show_sql" value="true"/> <!-- 是否在控制台打印sql语句 -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
